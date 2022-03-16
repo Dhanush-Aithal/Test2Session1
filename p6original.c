@@ -1,32 +1,47 @@
 #include<stdio.h>
-void input_string(char*a)
-{
-  printf("enter the string");
-  scanf("%s",a);
+#include<string.h>
+
+void input_two_string(char *string,char *substring)
+{ 
+  printf("Enter the Word:\n");
+  scanf("%s", string);
+  printf("Enter the substring you wish to find:\n");
+  scanf("%s", substring);
 }
-int str_reverse(char*string,char*substring)
+
+int str_index(char *string, char *substring)
 {
-  int i=0;
-  while(string[i]=substring[i])
-    {
-      i++;
-    }
-  return i;
+  int i,k,n;
+    for (i=0;substring[i]!='\0';)
+      {
+        for (k=0;string[k]!='\0';)
+          {
+            if (string[k]==substring[i])
+              {
+                i++;
+                k++;
+                n=k-strlen(substring);
+              }
+            else
+              {
+                k++;
+              }
+          }
+      }
+  return n+1;
 }
-void output(char*string,char*substring,int index)
+
+void output(char *string, char *substring, int index)
 {
-  if(index!=0)
-    printf("the index of %s in %s is %d\n",substring,string,index);
-  else
-    printf("index not found");
+  printf("The index of '%s' in '%s' is %d\n",substring,string,index);
 }
+
 int main()
 {
-  char string[100];
-  char substring[100];
-  input_string(string);
-  input_string(substring);
-  int index=str_reverse(string,substring);
-  output(string,substring,index);
+  char a[20],b[20];
+  int n;
+  input_two_string(a,b);
+  n=str_index(a,b);
+  output(a,b,n);
   return 0;
 }
