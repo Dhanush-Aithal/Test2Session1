@@ -8,7 +8,7 @@ int input()
   return n;
 }
 
-int find_fibo(int n)
+int find_fibo( int n)
 {
   int a,b,k,fib;
   for (a = 0, b = 1, k = 0; k < n; k++)
