@@ -8,7 +8,7 @@ void input(float*x1,float*y1,float*x2,float*y2)
   scanf("%f%f",x2,y2);
   
 }
-void find_distance(float x1,float y1,float x2,float y2,float *area)
+void find_distance(float x1, float y1, float x2,float y2,float *area)
 {
   float a,b,result,sqrt;
   a = x2-x1;
