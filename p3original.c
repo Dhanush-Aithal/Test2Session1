@@ -24,7 +24,7 @@ int is_prime(int n)
     }
   return 1;
 }
-void output(int n,int is_prime)
+void output(int n, int is_prime)
 {
   if(is_prime==0)
   {
